@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>老白小铺账号商城</title>
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #111;
+      --card-bg: #fff;
+      --button-bg: #2196f3;
+      --disabled-btn: #999;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --card-bg: #1e1e1e;
+      --button-bg: #4a90e2;
+      --disabled-btn: #555;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--button-bg);
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .notice {
+      background: #fffae6;
+      border-left: 5px solid #f0c000;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .product {
+      background: var(--card-bg);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      transition: background 0.3s;
+    }
+
+    .product h2 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: green;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: var(--disabled-btn);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: not-allowed;
+    }
+
+    footer {
+      background-color: #eee;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    body.dark footer {
+      background-color: #1e1e1e;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>老白小铺账号商城</h1>
+    <p>老白小铺主营全网各类账号，欢迎光临本店，祝您购物愉快：）</p>
+    <button class="toggle-mode" onclick="toggleMode()">切换夜间模式</button>
+  </header>
+
+  <div class="container">
+    <div class="notice">
+      <strong>公告：</strong><br>
+      在线客服：QQ 1487232262（10:00-22:00） / QQ 3912463053<br>
+      客服邮箱：3912463053@qq.com
+    </div>
+
+    <div class="product">
+      <h2>【国外渠道】全新谷歌邮箱（注册5天以上）</h2>
+      <p>质保3天，仅用于接收验证码注册，发送邮件可能会风控</p>
+      <p class="price">￥5</p>
+      <a class="buy-btn" title="请联系客服购买">购买</a>
+    </div>
+
+    <div class="product">
+      <h2>【长效】20年-22年老谷歌邮箱</h2>
+      <p>2FA登录方式，可接手机验证</p>
+      <p class="price">￥15</p>
+      <a class="buy-btn" title="请联系客服购买">购买</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 老白小铺账号商城
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
