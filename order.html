@@ -61,11 +61,18 @@
     <div class="product-name" id="productName">商品：加载中...</div>
 
     <form action="https://formsubmit.co/3912463053@qq.com" method="POST">
+      <!-- 用户填写的邮箱 -->
       <label for="email">收货邮箱：</label>
-      <input type="email" id="email" name="收货邮箱" required placeholder="请输入收货邮箱地址" />
+      <input type="email" id="email" name="email" required placeholder="请输入收货邮箱地址" />
 
-      <!-- 隐藏字段传商品名 -->
-      <input type="hidden" name="商品名称" id="product-field" value="" />
+      <!-- 隐藏字段：商品名称 -->
+      <input type="hidden" name="product" id="product-field" value="" />
+
+      <!-- 禁用验证码 -->
+      <input type="hidden" name="_captcha" value="false" />
+
+      <!-- 自定义邮件标题 -->
+      <input type="hidden" name="_subject" value="老白小铺新订单" />
 
       <button type="submit">提交订单</button>
     </form>
