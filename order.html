@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>提交订单 - 老白小铺</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      padding: 2em;
+      color: #333;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #007bff;
+    }
+    .product-name {
+      font-weight: bold;
+      margin: 1em 0;
+      font-size: 1.2em;
+    }
+    label {
+      display: block;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    input {
+      width: 100%;
+      padding: 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 2em;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      padding: 1em;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>订单提交</h2>
+    <div class="product-name" id="productName">商品：加载中...</div>
+
+    <form action="https://formsubmit.co/3912463053@qq.com" method="POST">
+      <label for="email">收货邮箱：</label>
+      <input type="email" id="email" name="收货邮箱" required placeholder="请输入收货邮箱地址" />
+
+      <!-- 隐藏字段传商品名 -->
+      <input type="hidden" name="商品名称" id="product-field" value="" />
+
+      <button type="submit">提交订单</button>
+    </form>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('product') || '未指定商品';
+    document.getElementById('productName').textContent = '商品：' + product;
+    document.getElementById('product-field').value = product;
+  </script>
+</body>
+</html>
